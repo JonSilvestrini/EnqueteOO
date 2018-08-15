@@ -45,6 +45,15 @@ class Registro {
 			echo "Erro na operação<p> {$e->getMessage()}";
 			exit;
 		}
+		
+		
 	}
+	
+	public function findAll(){
+			$sql = "select * from " . $this->tabela;
+			$stmt= self::$con->prepare($sql);
+			$stmt->execute();
+			return $stmt->fetchAll();
+		}
 
 }
