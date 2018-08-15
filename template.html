@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>[@titulo]</title>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<script src="js/jquery.min.js"></script>	
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<link type="text/css" rel="stylesheet" href="estilo.css">
+	
+</head>
+<body>
+
+<div class="container">
+<div class="jumbotron">
+<div class="principal">
+<div class="cabecalho">
+  <div class="titulo">
+  <img src="img/logo_etec.png" class="img-rounded" alt="Etecleme" width="94" height="60"> 
+  <br>Curso de Informática.
+  </div><!--titulo-->
+  <button type="button" class="btn btn-danger btn-xs" id="myBtn">Acesso</button>
+</div><!--cabecalho-->
+
+<div class="centro">
+
+<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="padding:35px 50px;">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+        </div>
+        <div class="modal-body" style="padding:40px 50px;">
+          <form role="form" action="autentica.php" method="post">
+            <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span>Usuário</label>
+              <input type="text" name="email" class="form-control" id="usrname" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span>Senha</label>
+              <input type="password" name="senha" class="form-control" id="psw" placeholder="Enter password">
+            </div>
+            <button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span>Acessar</button>
+          </form>
+        </div>
+        
+		<div class="modal-footer">
+          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancelar</button>
+          </div>
+      </div>
+    </div>
+  </div> 
+ 
+<script>
+$(document).ready(function(){
+    $("#myBtn").click(function(){
+        $("#myModal").modal();
+    });
+});
+</script>
+
+
+<a href="index.php">
+  <span class="glyphicon glyphicon-home"></span> 
+  Início
+  </a> |
+  
+  <a href="cadusuario.php">
+  <span class="glyphicon glyphicon-list-alt"></span> 
+  Cadastro de usuários
+  </a> | 
+  
+  <a href="consultaenquete.php">
+  <span class="glyphicon glyphicon-list-alt"></span> 
+  Consulta Enquete
+  </a> | 
+  
+  <a href="consultaenquete_detalhe.php">
+  <span class="glyphicon glyphicon-list-alt"></span> 
+  Consulta Totais
+  </a> | 
+  
+  <a href="login.php">
+  <span class="glyphicon glyphicon-user"></span> 
+  Login
+  </a> | 
+  
+  <a href="logout.php">
+  <span class="glyphicon glyphicon-off"></span> 
+  Sair
+  </a> |
+
+
+
+[@conteudo]
+
+</div><!--centro-->
+<div class="rodape">[@rodape]Curso de Informática</div>
+</div><!--principal-->
+</div><!--jumbotron-->
+</div><!--container-->
+</body>
+</html>
+
+
+
