@@ -81,12 +81,12 @@ and open the template in the editor.
 			$bt2->value="Limpar";
 			$bt2->class="btn btn-primary";
 			
-			$sugestao = new Element("input");
-			$sugestao->type="text";
-			$sugestao->name="txtsugestao";
-			$sugestao->size="40";
-			$sugestao->maxlenght="100";
-			$sugestao->class="form-control";
+			$nome = new Element("input");
+			$nome->type="text";
+			$nome->name="txtsugestao";
+			$nome->size="40";
+			$nome->maxlenght="100";
+			$nome->class="form-control";
 			
 			$form->add($label1);
 			$form->add($br);
@@ -94,7 +94,7 @@ and open the template in the editor.
 			$form->add("<br><br>");
 			$form->add($label2);
 			$form->add("<br>");
-			$form->add($sugestao);
+			$form->add($nome);
 			$form->add($bt1);
 			$form->add($bt2);
 			

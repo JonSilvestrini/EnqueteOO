@@ -1,19 +1,19 @@
 <?php
 require "classes/Element.class.php";
 
-$sugestao = new Element("input");
-$sugestao->type="text";
-$sugestao->name="txtsugestao";
-$sugestao->size="40";
-$sugestao->maxlength="100";
-$sugestao->class="form-control";
+$nome = new Element("input");
+$nome->type="text";
+$nome->name="txtsugestao";
+$nome->size="40";
+$nome->maxlength="100";
+$nome->class="form-control";
 //$sugestao->show();
 
 $form = new Element("form");
 $form->action="grava.php";
 $form->method="post";
 $form->name="form1";
-$form->add($sugestao);
+$form->add($nome);
 $form->show();
 ?>
 

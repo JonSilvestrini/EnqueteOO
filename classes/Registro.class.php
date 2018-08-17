@@ -54,6 +54,14 @@ class Registro {
 			$stmt= self::$con->prepare($sql);
 			$stmt->execute();
 			return $stmt->fetchAll();
-		}
+	}
+		
+	public function findCriterio($campos, $criterio) {
+		$sql = "select ". $campos . " FROM " . $this->tabela . " "  . $criterio;
+		//echo $sql;exit;
+		$stmt= self::$con->prepare($sql);
+		$stmt->execute();
+		return $stmt->fetchAll();
+	}
 
 }
