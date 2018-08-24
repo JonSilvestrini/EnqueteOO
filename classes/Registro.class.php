@@ -63,5 +63,14 @@ class Registro {
 		$stmt->execute();
 		return $stmt->fetchAll();
 	}
+	
+	public function delete($id){
+		$sql = "delete from " . $this->tabela . ' where codigo='.$id;
+		try {
+			return self::$con->query($sql);
+		} catch (Exception $e) {
+			echo "Erro na operação! <p> {$e->getMessage()}";exit;
+		}
+	}
 
 }

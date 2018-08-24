@@ -115,7 +115,7 @@ foreach ($enquete->findAll() as $key => $dados) {
 	$link->add("Alterar");
 	
 	$link2 = new Element("a");
-	$link2->href="alterarusuarios.php?codigo=$dados[0]\" onclick=\"return confirm('Confirma exclusão do registro?')";
+	$link2->href="excluirusuarios.php?codigo=$dados[0]\" onclick=\"return confirm('Confirma exclusão do registro?')";
 	$link2->class="btn btn-danger btn-xs";
 	$link2->add("Excluir");
 	
