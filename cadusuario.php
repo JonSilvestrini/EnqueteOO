@@ -85,12 +85,48 @@ $form->add($senha2);
 $form->add("<br><br><br>");
 $form->add($bt1);
 $form->add($bt2);
+$form->add("<br><br>");
 
 $conteudo = $form->show();
 
+$con= Conexao::Open();
+$enquete=new Registro("usuarios",$con);
+
+$tab = new Table();
+$tab->class='table table-hover';
+$tab->border='1';
+$tab->style='background: #fff';
+$linha=$tab->addRow();
+$linha->style='background: #ccc';
+$linha->addCell('Código');
+$linha->addCell('Nome');
+$linha->addCell('Email');
+$linha->addCell('Opções');
+
+foreach ($enquete->findAll() as $key => $dados) {
+	$linha=$tab->addRow();
+	$linha->addCell($dados[0]);
+	$linha->addCell($dados[1]);
+	$linha->addCell($dados[2]);
+	
+	$link = new Element("a");
+	$link->href="alterarusuarios.php?codigo=$dados[0]";
+	$link->class="btn btn-success btn-xs";
+	$link->add("Alterar");
+	
+	$link2 = new Element("a");
+	$link2->href="alterarusuarios.php?codigo=$dados[0]\" onclick=\"return confirm('Confirma exclusão do registro?')";
+	$link2->class="btn btn-danger btn-xs";
+	$link2->add("Excluir");
+	
+	$linha->addCell($link.$link2);
+}
+
+$conteudo.=$tab->show();
+
 $pagina = new Template("template.html");
-$pagina->set("titulo", "Enquete Eletrônica");
-$pagina->set("conteudo", "$conteudo");
-$pagina->set("rodape", "Sistema Eletrônico ");
+$pagina->set("titulo", "Consulta Totais");
+$pagina->set("conteudo", $conteudo);
+$pagina->set("rodape", "Consultas Totais - ");
 echo $pagina->show();
 ?>

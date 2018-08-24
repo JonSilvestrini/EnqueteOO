@@ -79,6 +79,10 @@ class Element
         }
         return $this->conteudo;
     }
+    
+    public function __toString() {
+	    return $this->show();
+    }
 }
 
 ?>
