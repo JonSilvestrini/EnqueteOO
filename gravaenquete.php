@@ -13,7 +13,7 @@ $enquete->sugestao=$_POST['txtsugestao'];
 $enquete->data= date("Y/m/d");
 //$enquete->save();
 
-if ($enquete->save()) {
+if ($enquete->save($enquete->codigo)) {
 	$pagina = new Template("template.html");
 	$pagina->set("titulo", "Obrigado.");
 	$pagina->set("conteudo", new Msg("Obrigado pela resposta!"));

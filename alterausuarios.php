@@ -13,10 +13,15 @@ $acesso = new Registro("usuarios", $con);
 $row=$acesso->find($id);
 
 $form = new Element("form");
-$form->action="gravaaltusuario.php";
+$form->action="gravaaltusuarios.php";
 $form->name = "f1";
 $form->method = "post";
 $form->class = "form-inline";
+
+$codigo = new Element("input");
+$codigo->type = "hidden";
+$codigo->name = "codigo";
+$codigo->value = $id;
 
 $label1 = new Element("label");
 $label1->add("Nome: ");
@@ -73,7 +78,7 @@ $bt2->type = "reset";
 $bt2->value = "Limpar";
 $bt2->class = "btn btn-danger";
 
-
+$form->add($codigo);
 $form->add("<br>");
 $form->add($label1);
 $form->add("<br>");

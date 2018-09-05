@@ -19,7 +19,7 @@ class Registro {
 		return $this->data[$prop];
 	}
 
-	public function save($id = 0) {
+	public function save($id) {
 		if ($id == 0) {
 			$sql = 'insert into ' . $this->tabela . '(' . implode(',', array_keys($this->data)) . ') values' . "('" . implode("','", array_values($this->data)) . "')";
 		} else {

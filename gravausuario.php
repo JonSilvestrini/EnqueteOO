@@ -26,7 +26,7 @@ if ($enquete->senha != $_POST['txtsenha2']) {
 
 $enquete->senha = sha1($enquete->senha);
 
-if ($enquete->save()) {
+if ($enquete->save($enquete->codigo)) {
 	$pagina = new Template("template.html");
 	$pagina->set("titulo", "Obrigado.");
 	$pagina->set("conteudo", new Msg("Usuário Cadastrado com sucesso!"));
