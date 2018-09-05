@@ -2,8 +2,9 @@
 
 require 'autoload.php';
 
+
 $con = Conexao::Open();
-$enquete = new Registro("usuario",$con);
+$enquete = new Registro("usuarios",$con);
 
 if($enquete->delete($_GET['codigo'])){
 	$pagina = new Template('template.html');

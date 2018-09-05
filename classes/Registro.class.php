@@ -72,5 +72,16 @@ class Registro {
 			echo "Erro na operação! <p> {$e->getMessage()}";exit;
 		}
 	}
+	
+	public function find($id=NULL){
+		if ($id) {
+			$sql = "select * from ". $this->tabela .' where codigo='.$id;
+			$stmt= self::$con->prepare($sql);
+			$stmt->execute();
+			return $stmt->fetch();
+		}else{
+			return array(array_keys($this->data));
+		}
+	}
 
 }
