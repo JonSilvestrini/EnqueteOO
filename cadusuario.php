@@ -6,6 +6,9 @@ error_reporting(E_ALL);
 
 require "autoload.php";
 
+$sessao=new Sessao();
+$sessao->Protege("email");
+
 $form = new Element("form");
 $form->action="gravausuario.php";
 $form->name = "f1";
