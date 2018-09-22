@@ -1,6 +1,6 @@
 <?php
 define('HOST', 'localhost');
-define('USER', 'jonatas');
+define('USER', 'root');
 define('PASS', '');
 define('DB', 'bdenquete');
 ?>
